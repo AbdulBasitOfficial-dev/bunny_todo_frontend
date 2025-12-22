@@ -8,7 +8,6 @@ const Signup = () => {
     name: '',
     email: '',
     password: '',
-    role: 'user',
   });
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
@@ -100,23 +99,6 @@ const Signup = () => {
                 disabled={loading}
               />
               <p className="mt-1 text-xs text-gray-400">Password must be at least 6 characters long</p>
-            </div>
-
-            {/* Role Selection (Optional) */}
-            <div>
-              <label htmlFor="role" className="block text-sm font-medium text-gray-300 mb-2">
-                Role (Optional)
-              </label>
-              <select
-                id="role"
-                value={form.role}
-                onChange={(e) => setForm({ ...form, role: e.target.value as 'user' | 'admin' })}
-                className="w-full px-4 py-3 bg-gray-700 border border-gray-600 text-white rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all duration-200"
-                disabled={loading}
-              >
-                <option value="user">User</option>
-                <option value="admin">Admin</option>
-              </select>
             </div>
 
             {/* Submit Button */}
